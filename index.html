@@ -11,11 +11,11 @@
         href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/index.js/" defer></script>
+    <script src="js/index.js" defer></script>
 </head>
 
 <body>
-    <button>
+    <button class="btn" id="discount-btn">
         <span class="icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="mask0_103_1618" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
@@ -32,6 +32,45 @@
         <span class="text">Interact</span>
     </button>
 
+    <dialog id="discount-dialog" class="dialog">
+        <div class="modal">
+            <div class="double-split">
+                <figure class="image-holder">
+                    <img src="asset/love_picture.webp" alt="" class="dialog-image">
+                </figure>
+                <div class="block dialog-block">
+                    <h3>Unlock $10 off your first order</h3>
+                    <p>Gain exclusive info about our sales, discounts and be the first to hear about the latest drops
+                        when you sign up</p>
+                    <form action="" method="post">
+                        <label for="email">
+                            <span class="text">Email</span>
+                            <input type="email" name="email" id="email" placeholder="Enter your email">
+                        </label>
+                        <label for="women">
+                            <input type="checkbox" name="type" id="women">
+                            <span class="text">Women's</span>
+                        </label>
+                        <label for="men">
+                            <input type="checkbox" name="type" id="men">
+                            <span class="text">Men's</span>
+                        </label>
+                        <button class="btn dialog-btn">
+                            Subscribe
+                        </button>
+                        <div class="bar">
+                            <span>
+                                <a href="">Privacy Policy</a>
+                            </span>
+                            <span>
+                                <a href="">Terms of Service</a>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </dialog>
 </body>
 
 </html>
