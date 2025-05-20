@@ -363,7 +363,7 @@
 			border-top-right-radius: var(--radius-m);
 			margin-inline: var(--spacing-d);
 			padding-inline: var(--spacing-m);
-			padding-block: var(--spacing-d) var(--spacing-l);
+			padding-block: var(--spacing-d);
 
 			/* Hotfix */
 			flex-wrap: wrap;
@@ -410,6 +410,7 @@
 		a {
 			text-decoration: none;
 			display: flex;
+			align-items: center;
 			gap: var(--spacing-d);
 
 			span:first-child {
@@ -449,6 +450,7 @@
 		a {
 			text-decoration: none;
 			display: flex;
+			align-items: center;
 			justify-content: end;
 			gap: var(--spacing-d);
 
@@ -469,9 +471,10 @@
 				border-radius: var(--radius-xxl);
 				font-weight: 700;
 				font-size: 14px;
-				align-self: self-start;
 				text-wrap: nowrap;
 			}
 		}
 	}
+
+	
 }
