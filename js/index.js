@@ -1,5 +1,8 @@
 const discountButtonEl = document.querySelector("#discount-btn");
+const loginButtonEl = discountButtonEl.nextElementSibling;
+
 const discountDialog = document.querySelector("#discount-dialog");
+const loginDialog = discountDialog.nextElementSibling;
 
 discountButtonEl.addEventListener("click", () => {
 	discountDialog.showModal();
@@ -8,5 +11,15 @@ discountButtonEl.addEventListener("click", () => {
 discountDialog.addEventListener("click", (e) => {
 	if (e.target === discountDialog) {
 		discountDialog.close();
+	}
+});
+
+loginButtonEl.addEventListener("click", () => {
+	loginDialog.showModal();
+});
+
+loginDialog.addEventListener("click", (e) => {
+	if (e.target === loginDialog) {
+		loginDialog.close();
 	}
 });

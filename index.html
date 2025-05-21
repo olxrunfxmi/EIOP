@@ -15,7 +15,24 @@
 </head>
 
 <body>
-    <button class="btn" id="discount-btn">
+    <button class="btn side-btn" id="discount-btn">
+        <span class="icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_103_1618" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                    height="24">
+                    <rect width="24" height="24" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask0_103_1618)">
+                    <path
+                        d="M2 21V3H10V21H2ZM12 21V3H20V7.1C19.8333 7.06667 19.6708 7.04167 19.5125 7.025C19.3542 7.00833 19.1833 7 19 7C17.6167 7 16.4375 7.48333 15.4625 8.45C14.4875 9.41667 14 10.6 14 12C14 13.4 14.4875 14.5833 15.4625 15.55C16.4375 16.5167 17.6167 17 19 17C19.1833 17 19.3542 16.9917 19.5125 16.975C19.6708 16.9583 19.8333 16.9333 20 16.9V21H12ZM18 15V13H16V11H18V9H20V11H22V13H20V15H18Z"
+                        fill="#150A12" />
+                </g>
+            </svg>
+        </span>
+        <span class="text">Interact</span>
+    </button>
+
+    <button class="btn" id="login-btn">
         <span class="icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="mask0_103_1618" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
@@ -68,6 +85,28 @@
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="login-dialog">
+        <div class="modal">
+            <div class="block spacer-large">
+                <h3>Log in to EIOP</h3>
+                <div class="bar login-type">
+                    <div class="pill-item active">QR code</div>
+                    <div class="pill-item">Phone</div>
+                    <div class="pill-item">Other</div>
+                </div>
+                <div class="qr-code"></div>
+                <footer>
+                    <div class="block footer-block">
+                        <p>By continuing with an account located in <a href="" class="login-link">Nigeria</a>, you agree
+                            to our <a href="" class="login-link">Terms of Service</a> and acknowledge that you have read
+                            our <a href="" class="login-link">Privacy Policy</a></p>
+                        <p>Don't you have an account? <a href="" class="special-link">Sign up</a></p>
+                    </div>
+                </footer>
             </div>
         </div>
     </dialog>

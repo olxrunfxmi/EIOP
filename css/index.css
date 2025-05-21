@@ -162,6 +162,7 @@
 		letter-spacing: var(--font-spacing-m);
 		line-height: var(--font-line-height-m);
 		padding-inline: var(--spacing-d);
+		background: var(--white-off-white);
 	}
 
 	h1,
@@ -187,6 +188,10 @@
 
 	.spacer-normal {
 		gap: var(--spacing-l);
+	}
+
+	.spacer-large {
+		gap: var(--spacing-xxxl);
 	}
 
 	.double-split {
@@ -221,6 +226,10 @@
 		border: none;
 	}
 
+	.side-btn {
+		background-color: var(--white-main);
+	}
+
 	.dialog-btn {
 		padding-block: var(--spacing-xl);
 		border-radius: var(--radius-xxs);
@@ -230,7 +239,7 @@
 		grid-column: 1/-1;
 	}
 
-	.dialog {
+	#discount-dialog {
 		max-width: 960px;
 		border: none;
 
@@ -240,7 +249,7 @@
 			display 0.4s ease-in-out;
 	}
 
-	.dialog[open] {
+	#discount-dialog[open] {
 		opacity: 1;
 		transform: translateY(0) scale(1);
 		transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out,
@@ -248,14 +257,15 @@
 	}
 
 	@starting-style {
-		.dialog[open] {
+		#discount-dialog[open] {
 			opacity: 0;
 			transform: translateY(100%) scale(0);
 		}
 	}
 
-	.dialog::backdrop {
-		background: rgb(0, 0, 0, 0.6);
+	#discount-dialog::backdrop,
+	#login-dialog::backdrop {
+		background: rgb(0, 0, 0, 0.4);
 		padding: 2rem;
 	}
 
@@ -382,6 +392,76 @@
 
 		.block {
 			margin-block-end: var(--spacing-xxl);
+		}
+	}
+
+	#login-dialog {
+		max-width: 480px;
+		border-radius: 8px;
+		border: none;
+		background: #121212;
+		padding-block-start: var(--spacing-xxxl);
+		color: var(--white-off-white);
+
+		h3 {
+			font-family: var(--text-font-ff);
+		}
+
+		.block {
+			justify-items: center;
+		}
+
+		.login-type {
+			background: rgb(49, 49, 49);
+			padding: var(--spacing-xxs);
+			border-radius: calc(var(--spacing-xxs) + var(--radius-xxs));
+			font-weight: 600;
+		}
+
+		.pill-item {
+			padding: var(--spacing-s) var(--spacing-xxxl);
+			border-radius: var(--radius-xxs);
+			color: #a2a2a2;
+
+			&.active {
+				background: #616161;
+				color: var(--white-main);
+			}
+		}
+
+		.qr-code {
+			background: var(--white-off-white);
+			border-radius: var(--radius-xxl);
+			width: 200px;
+			height: 200px;
+			margin-block: var(--spacing-xxl);
+		}
+
+		.footer-block {
+			background: #252525;
+
+			p {
+				margin: 0;
+				text-align: center;
+				padding: var(--spacing-xl);
+			}
+
+			.login-link {
+				text-decoration: none;
+				color: var(--white-main);
+			}
+
+			.special-link {
+				text-decoration: none;
+				color: var(--accent-crayola);
+				font-weight: 600;
+			}
+
+			p:first-child {
+				font-size: var(--step--1);
+				color: #8c9192;
+				border-bottom: 1px solid #3e3e3e;
+			}
 		}
 	}
 
