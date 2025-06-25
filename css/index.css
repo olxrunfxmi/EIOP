@@ -163,6 +163,7 @@
 		/* Spacing */
 		--spacing-xxs: 0.125rem;
 		--spacing-xs: 0.25rem;
+		--spacing-ds: 0.375rem;
 		--spacing-s: 0.5rem;
 		--spacing-m: 0.625rem;
 		--spacing-d: 0.75rem;
@@ -201,7 +202,10 @@
 	h3,
 	h4,
 	h5,
-	h6 {
+	h6,
+	.h1,
+	.h2,
+	.h3 {
 		font-family: var(--heading-font-ff);
 		line-height: var(--font-line-height-s);
 		letter-spacing: var(--font-spacing-l);
@@ -223,6 +227,10 @@
 		font-size: var(--step-1);
 		line-height: var(--font-line-height-xl);
 		letter-spacing: var(--font-spacing-m);
+	}
+
+	button {
+		cursor: pointer;
 	}
 }
 
@@ -267,6 +275,80 @@
 
 		g path {
 			fill: var(--black-overlay);
+		}
+	}
+
+	.link-decorate {
+		--size: 0.05em;
+		text-decoration: none;
+		color: var(--black-main);
+		background: linear-gradient(to right, black, black);
+		background-repeat: no-repeat;
+		background-position: bottom;
+		background-size: 0% var(--size);
+		transition: background 0.2s linear;
+
+		&:hover {
+			background-size: 100% var(--size);
+		}
+	}
+
+	/* .fullscreen {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background: var(--white-main);
+		z-index: 3;
+	} */
+
+	#navpopover {
+		width: 100%;
+		height: 100%;
+		background: var(--white-main);
+		padding: var(--spacing-xvl);
+		overflow-x: hidden;
+
+		.fullscreen {
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+
+				li {
+					margin-block-end: 48px;
+				}
+			}
+		}
+
+		.link-info {
+			width: min(480px, 100%);
+		}
+
+		#closenavpopover {
+			position: absolute;
+			bottom: 0;
+			right: var(--spacing-xvl);
+
+			background: var(--accent-orange);
+			color: var(--black-overlay);
+			padding-block: var(--spacing-ds) 70px;
+			padding-inline: var(--spacing-m) var(--spacing-d);
+			border: none;
+			height: 100px;
+		}
+
+		.nav-svg {
+			position: absolute;
+			right: 0;
+			top: 6vh;
+			transform: translateX(475px);
+			max-width: 1100px;
+			width: 100%;
+			height: auto;
 		}
 	}
 
@@ -937,16 +1019,6 @@
 	}
 }
 
-@media (width <= 520px) {
-	.bottom-bar {
-		padding-inline: var(--spacing-l);
-
-		.progress {
-			gap: var(--spacing-m);
-		}
-	}
-}
-
 @layer animations {
 	@keyframes rotate-bg {
 		from {
@@ -965,6 +1037,16 @@
 
 		to {
 			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes underline-it {
+		from {
+			background-size: 0% 1px;
+		}
+
+		to {
+			background-size: 100% 1px;
 		}
 	}
 }
@@ -993,6 +1075,23 @@
 				&[data-type="end"] {
 					left: 0;
 				}
+			}
+		}
+	}
+
+	@media (width <= 520px) {
+		.bottom-bar {
+			padding-inline: var(--spacing-l);
+
+			.progress {
+				gap: var(--spacing-m);
+			}
+		}
+		#navpopover {
+			padding: var(--spacing-xl);
+
+			#closenavpopover {
+				right: var(--spacing-xl);
 			}
 		}
 	}

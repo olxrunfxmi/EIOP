@@ -4,6 +4,8 @@ const loginButtonEl = discountButtonEl.nextElementSibling;
 const discountDialog = document.querySelector("#discount-dialog");
 const loginDialog = discountDialog.nextElementSibling;
 
+const popoverButton = document.querySelector("#closenavpopover");
+
 discountButtonEl.addEventListener("click", () => {
 	discountDialog.showModal();
 });
@@ -22,4 +24,8 @@ loginDialog.addEventListener("click", (e) => {
 	if (e.target === loginDialog) {
 		loginDialog.close();
 	}
+});
+
+popoverButton.addEventListener("click", () => {
+	popoverButton.parentElement.hidePopover();
 });
