@@ -293,6 +293,15 @@
 		}
 	}
 
+	.constant-link {
+		--size: 0.09em;
+		background-size: 100% var(--size);
+
+		&:hover {
+			animation: underline-it 0.4s linear forwards;
+		}
+	}
+
 	/* .fullscreen {
 		position: absolute;
 		top: 0;
@@ -388,6 +397,11 @@
 		max-width: 1100px;
 		width: 100%;
 		height: auto;
+	}
+
+	.padded-link {
+		display: inline-block;
+		padding-block: var(--spacing-xxs);
 	}
 
 	#identifier {
@@ -1070,11 +1084,15 @@
 
 	@keyframes underline-it {
 		from {
-			background-size: 0% 1px;
+			background-size: 100% var(--size);
+		}
+
+		50% {
+			background-size: 0% var(--size);
 		}
 
 		to {
-			background-size: 100% 1px;
+			background-size: 100% var(--size);
 		}
 	}
 }
