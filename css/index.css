@@ -305,12 +305,12 @@
 		z-index: 3;
 	} */
 
-	#navpopover {
+	#navpopover:popover-open {
 		width: 100%;
 		height: 100%;
 		background: var(--white-main);
 		padding: var(--spacing-xvl);
-		overflow-x: hidden;
+		overflow: hidden;
 
 		.fullscreen {
 			ul {
@@ -320,6 +320,15 @@
 
 				li {
 					margin-block-end: 48px;
+					transform: none;
+					opacity: 1;
+					transition: transform 0.4s calc(var(--delay) * 1s) linear,
+						opacity 0.4s calc(var(--delay) * 1s) linear;
+
+					@starting-style {
+						transform: translateY(100%);
+						opacity: 0;
+					}
 				}
 			}
 		}
@@ -339,6 +348,12 @@
 			padding-inline: var(--spacing-m) var(--spacing-d);
 			border: none;
 			height: 100px;
+			transform: none;
+			transition: transform 0.2s ease-in;
+
+			@starting-style {
+				transform: translateY(100%);
+			}
 		}
 
 		.nav-svg {
@@ -349,7 +364,20 @@
 			max-width: 1100px;
 			width: 100%;
 			height: auto;
+			transition: transform 0.4s linear;
+
+			@starting-style {
+				transform: translateY(100%); /* Liked the weird behaviour*/
+				transform: translateX(100%);
+			}
 		}
+
+		/* &:popover-open {
+			background-color: var(--accent---rust);
+			#closenavpopover {
+				transform: none;
+			}
+		} */
 	}
 
 	.hero {
