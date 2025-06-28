@@ -2,8 +2,6 @@ const windowData = [document.body.scrollHeight, window.innerHeight];
 const scrollIdEl = document.querySelector("#scrollId");
 const blocks = document.querySelectorAll(".blocks > .block");
 
-console.log(blocks);
-
 window.addEventListener("scroll", () => {
 	const scrollPercent = obtainScrollValue();
 	morphBlocks(blocks, Math.ceil(scrollPercent / 10));

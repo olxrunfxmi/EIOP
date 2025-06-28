@@ -37,7 +37,9 @@
                     </li>
                 </ul>
             </nav>
-            <p class="link-info">Using it, I first built a <a href="" class="link-decorate padded-link constant-link">Rock, Paper, Scissors</a> to showcase simple DOM manipulation and
+            <p class="link-info">Using it, I first built a <a href=""
+                    class="link-decorate padded-link constant-link">Rock, Paper, Scissors</a> to showcase simple DOM
+                manipulation and
                 a bit of CSS
                 learnings and
                 Etch-a-Sketch with more DOM manipulation. And to cap it up, we built the typical calculator to
@@ -102,7 +104,7 @@
 
             <div class="hero-content">
                 <h1>This is a Landing Page</h1>
-                <div class="auto-grid pad">
+                <div class="auto-grid pad constraint">
                     <p>Typically, it is the first point of contact to people, businesses and enterprises about what they
                         do
                         or offer. Here, it
@@ -110,7 +112,7 @@
                         HTML,
                         CSS and JavaScript.</p>
                     <p>It’s a
-                        <span class="highlighter">
+                        <span class=" highlighter">
                             reference
                             <span class="highlight-wrap">
                                 <span class="highlight">
@@ -150,8 +152,6 @@
             </div>
             <button popovertarget="navpopover" popovertargetaction="toggle">Menu</button>
         </section>
-
-
 
     </main>
     <button class="btn side-btn" id="discount-btn">
@@ -433,103 +433,124 @@
         </div>
     </article>
 
-    <div class="details">
-        <a class="grad-btn" href="https://github.com/olxrunfxmi">
-            <div class="button-inner">
-                <span class="icon">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <mask id="mask0_104_1857" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
-                            width="16" height="16">
-                            <rect width="16" height="16" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_104_1857)">
-                            <path
-                                d="M4.26732 12.0007L3.33398 11.0673L9.73398 4.66732H4.00065V3.33398H12.0007V11.334H10.6673V5.60065L4.26732 12.0007Z"
-                                fill="black" />
-                        </g>
-                    </svg>
-                </span>
-                <span class="text">
-                    GitHub
-                </span>
-            </div>
-        </a>
+    <section id="details" class="pad gapper">
+        <h2>Details can be found here</h2>
+        <p>Incase, I have want to see what I am doing at different points in time. Find me on GitHub, Codepen and
+            Twitter.</p>
+        <div class="link-group">
+            <a class="grad-btn" href="https://github.com/olxrunfxmi">
+                <div class="button-inner">
+                    <span class="icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_104_1857" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="16" height="16">
+                                <rect width="16" height="16" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_104_1857)">
+                                <path
+                                    d="M4.26732 12.0007L3.33398 11.0673L9.73398 4.66732H4.00065V3.33398H12.0007V11.334H10.6673V5.60065L4.26732 12.0007Z"
+                                    fill="black" />
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="text">
+                        GitHub
+                    </span>
+                </div>
+            </a>
 
-        <a class="alt-btn" href="https://codepen.io/olxrunfxmi">
-            <div class="button-inner alt-inner">
-                <span class="icon">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <mask id="mask0_104_1857" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
-                            width="16" height="16">
-                            <rect width="16" height="16" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_104_1857)">
-                            <path
-                                d="M4.26732 12.0007L3.33398 11.0673L9.73398 4.66732H4.00065V3.33398H12.0007V11.334H10.6673V5.60065L4.26732 12.0007Z"
-                                fill="black" />
-                        </g>
-                    </svg>
-                </span>
-                <span class="text">
-                    Codepen
-                </span>
-            </div>
-        </a>
+            <a class="alt-btn" href="https://codepen.io/olxrunfxmi">
+                <div class="button-inner alt-inner">
+                    <span class="icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_104_1857" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="16" height="16">
+                                <rect width="16" height="16" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_104_1857)">
+                                <path
+                                    d="M4.26732 12.0007L3.33398 11.0673L9.73398 4.66732H4.00065V3.33398H12.0007V11.334H10.6673V5.60065L4.26732 12.0007Z"
+                                    fill="black" />
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="text">
+                        Codepen
+                    </span>
+                </div>
+            </a>
 
-        <a class="alt-btn ob-btn" href="https://codepen.io/olxrunfxmi">
-            <div class="button-inner alt-inner">
-                <span class="icon">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <mask id="mask0_104_1857" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
-                            width="16" height="16">
-                            <rect width="16" height="16" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_104_1857)">
-                            <path
-                                d="M4.26732 12.0007L3.33398 11.0673L9.73398 4.66732H4.00065V3.33398H12.0007V11.334H10.6673V5.60065L4.26732 12.0007Z"
-                                fill="black" />
-                        </g>
-                    </svg>
-                </span>
-                <span class="text">
-                    Codepen
-                </span>
-            </div>
-        </a>
-    </div>
+            <a class="alt-btn ob-btn" href="https://codepen.io/olxrunfxmi">
+                <div class="button-inner alt-inner">
+                    <span class="icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_104_1857" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="16" height="16">
+                                <rect width="16" height="16" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_104_1857)">
+                                <path
+                                    d="M4.26732 12.0007L3.33398 11.0673L9.73398 4.66732H4.00065V3.33398H12.0007V11.334H10.6673V5.60065L4.26732 12.0007Z"
+                                    fill="black" />
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="text">
+                        Codepen
+                    </span>
+                </div>
+            </a>
+        </div>
+    </section>
 
-    <div class="clipper">
-        <div class="start">
-            <dl class="breakdown" data-type="start">
-                <dt>Here</dt>
-                <dd>CSS Learnings</dd>
-                <dd>JavaScript Fundamentals</dd>
-            </dl>
+    <section id="here" class="pad constraint gapper">
+        <div class="text-group">
+            <h2>Where to from here</h2>
+            <p>The goal is to be able to build mid-scale user applications from start to finish - design to front-end.
+                The
+                next steps
+                is building CSS Project habits, learning more JavaScript techniques, Algorithms and Data Structure, more
+                Animations,
+                SVGs, Web Performance, and the wonderful world of React. And potentially, efficient Front-end System
+                Design.
+            </p>
         </div>
-        <div class="midpoint">
-            <dl class="breakdown" data-type="midpoint">
-                <dt>Midpoint</dt>
-                <dd>JavaScript Advanced</dd>
-                <dd>Algorithm and Data Structure</dd>
-                <dd>More CSS Learnings</dd>
-                <dd>SVGs</dd>
-                <dd>Web Performance</dd>
-                <dd>Accessibility</dd>
-                <dd>Testings</dd>
-            </dl>
+        <div class="clipper-wrap">
+            <div class="clipper">
+                <div class="start">
+                    <dl class="breakdown" data-type="start">
+                        <dt>Here</dt>
+                        <dd>CSS Learnings</dd>
+                        <dd>JavaScript Fundamentals</dd>
+                    </dl>
+                </div>
+                <div class="midpoint">
+                    <dl class="breakdown" data-type="midpoint">
+                        <dt>Midpoint</dt>
+                        <dd>JavaScript Advanced</dd>
+                        <dd>Algorithm and Data Structure</dd>
+                        <dd>More CSS Learnings</dd>
+                        <dd>SVGs</dd>
+                        <dd>Web Performance</dd>
+                        <dd>Accessibility</dd>
+                        <dd>Testings</dd>
+                    </dl>
+                </div>
+                <div class="end">
+                    <dl class="breakdown" data-type="end">
+                        <dt>Career Start</dt>
+                        <dd>React</dd>
+                        <dd>TypeScript</dd>
+                        <dd>Vue, maybe</dd>
+                        <dd>Front-end System Design</dd>
+                        <dd>More DSA</dd>
+                        <dd>Web Security</dd>
+                    </dl>
+                </div>
+            </div>
         </div>
-        <div class="end">
-            <dl class="breakdown" data-type="end">
-                <dt>Career Start</dt>
-                <dd>React</dd>
-                <dd>TypeScript</dd>
-                <dd>Vue, maybe</dd>
-                <dd>Front-end System Design</dd>
-                <dd>More DSA</dd>
-                <dd>Web Security</dd>
-            </dl>
-        </div>
-    </div>
+    </section>
+
 
 </body>
 
