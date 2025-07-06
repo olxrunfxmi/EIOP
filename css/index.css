@@ -186,6 +186,11 @@
 		--radius-xxxl: 48px;
 	}
 
+	@font-face {
+		font-family: Tanker;
+		src: url("https://ik.imagekit.io/ndtwmeq4p/eiop/Tanker-Regular.ttf");
+	}
+
 	body {
 		font-family: var(--text-font-ff);
 		letter-spacing: var(--font-spacing-m);
@@ -599,6 +604,11 @@
 
 	#present {
 		padding-block-end: 120px;
+
+		p.text-group.pad {
+			margin-block: var(--spacing-xxxl);
+		}
+
 		header {
 			background: var(--white-main);
 			border-bottom: 1px solid var(--grey-overlay);
@@ -737,6 +747,8 @@
 		background: var(--black-main);
 		color: var(--white-main);
 		padding-block: var(--spacing-xvl) var(--spacing-l);
+		position: relative;
+		overflow: hidden;
 
 		.end {
 			align-items: end;
@@ -812,6 +824,60 @@
 		}
 	}
 
+	.circle {
+		border-radius: 50%;
+		text-transform: uppercase;
+		display: grid;
+		place-content: center;
+		font-family: Tanker;
+		position: absolute;
+		opacity: 1;
+		transform: scale(1);
+		transition: opacity 0.6s, transform 0.4s, display 0.4s;
+		transition-behavior: allow-discrete;
+
+		@starting-style {
+			opacity: 0;
+			transform: scale(0);
+		}
+
+		&[data-type="s"] {
+			width: 230px;
+			height: 230px;
+			background: var(--accent-engine-red);
+			color: var(--white-main);
+			bottom: 128px;
+			right: 52px;
+		}
+
+		&[data-type="m"] {
+			width: 270px;
+			height: 270px;
+			background: var(--accent-pink);
+			color: var(--grey-pinkish);
+			top: -26px;
+			right: -41px;
+		}
+
+		&[data-type="l"] {
+			width: 312px;
+			height: 312px;
+			background: var(--accent-blue);
+			color: var(--accent-carribean);
+			bottom: -64px;
+			right: 259px;
+		}
+
+		&[data-type="xl"] {
+			width: 360px;
+			height: 360px;
+			background: var(--accent-orange);
+			color: var(--accent---sepia);
+			top: 58px;
+			right: 232px;
+		}
+	}
+
 	#boxBlob {
 		display: flex;
 		gap: 8px;
@@ -823,7 +889,7 @@
 			border-radius: var(--radius-m);
 			opacity: 1;
 			transform: translateX(0) scale(1);
-			transition: opacity 0.4s, transform 0.4s;
+			transition: opacity 0.4s, transform 0.4s, display 0.4s;
 			transition-behavior: allow-discrete;
 
 			@starting-style {
