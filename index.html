@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/index.js" defer></script>
     <script src="js/operation.js" defer></script>
+    <script src="js/interaction.js" defer></script>
 </head>
 
 <body>
@@ -156,7 +157,8 @@
     </main>
 
     <section id="odin" class="double-split pad constraint">
-        <div class="blob-interactive" data-type="small"></div>
+        <div class="blob-interactive" id="boxBlob" data-type="small">
+        </div>
         <div class="group">
             <div class="text-group">
                 <p>As a designer, I want to approach web (and software) development from a depth-first viewpoint where
@@ -164,7 +166,7 @@
                     aspect of the
                     web is thorough good. Which means I have a long way to go. But who doesn’t love a good update site.
                 </p>
-                <button class="btn">
+                <button class="btn" id="boxHandler">
                     <span class="icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="mask0_103_1618" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
@@ -292,7 +294,7 @@
         </div>
         <div class="end bar">
             <p>A worldly attempt at recreating some really cool websites I have seen.</p>
-            <button class="btn">
+            <button class="btn" id="bubbleHandler">
                 <span class="icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="mask0_103_1618" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
@@ -308,6 +310,57 @@
                 </span>
                 <span class="text">Interact</span>
             </button>
+        </div>
+    </section>
+
+    <section id="present">
+        <p class="text-group pad">Armed with some rudimentary CSS, it was time to know some CSS Animations and more CSS
+            properties - logical
+            properties,
+            variables, etc. Took some lessons, dabbled and played with element building in Codepen.</p>
+        <header class="bar">
+            <p>Bringing it together</p>
+
+            <div class="button-group">
+                <button data-state="active"></button>
+                <button></button>
+                <button></button>
+            </div>
+
+            <h2>Some Presentable Codepen</h2>
+        </header>
+        <div class="contents">
+            <div class="content">
+                Noun Header
+                <p>Using FLIP technique, I was able to transform the logo from the bottom to the top of the page which
+                    happens on click. I
+                    need to learn scroll animations to make it happen on scroll. It’s probably easy to do, but one step
+                    at a time. Using it,
+                    I first built a Rock, Paper, Scissors to showcase simple DOM manipulation and a bit of CSS learnings
+                    and Etch-a-Sketch
+                    with more DOM manipulation. And to cap it up, we built the typical calculator to complete the Odin
+                    Foundation course.</p>
+                <p>Using FLIP technique, I was able to transform the logo from the bottom to the top of the page which
+                    happens on click. I
+                    need to learn scroll animations to make it happen on scroll. It’s probably easy to do, but one step
+                    at a time. Using it,
+                    I first built a Rock, Paper, Scissors to showcase simple DOM manipulation and a bit of CSS learnings
+                    and Etch-a-Sketch
+                    with more DOM manipulation. And to cap it up, we built the typical calculator to complete the Odin
+                    Foundation course.</p>
+                <p>
+                    Using FLIP technique, I was able to transform the logo from the bottom to the top of the page which
+                    happens on click. I
+                    need to learn scroll animations to make it happen on scroll. It’s probably easy to do, but one step
+                    at a time. Using it,
+                    I first built a Rock, Paper, Scissors to showcase simple DOM manipulation and a bit of CSS learnings
+                    and Etch-a-Sketch
+                    with more DOM manipulation. And to cap it up, we built the typical calculator to complete the Odin
+                    Foundation course.
+                </p>
+            </div>
+            <div class="content"></div>
+            <div class="content"></div>
         </div>
     </section>
 
