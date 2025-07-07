@@ -702,6 +702,7 @@
 							font-family: var(--text-font-ff);
 							font-size: var(--step-1);
 							margin: 0;
+							margin-block-start: var(--spacing-s);
 						}
 
 						p {
