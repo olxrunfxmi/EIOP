@@ -1285,6 +1285,12 @@
 				border: 1px solid var(--accent-ncs-red);
 			}
 		}
+
+		&:hover {
+			.card {
+				animation: jump 0.4s ease-in-out forwards;
+			}
+		}
 	}
 
 	.block-item-alternate {
@@ -1316,6 +1322,12 @@
 				font-weight: 700;
 				font-size: 14px;
 				text-wrap: nowrap;
+			}
+		}
+
+		&:hover {
+			.icon {
+				animation: score 0.4s ease both;
 			}
 		}
 	}
@@ -1559,6 +1571,27 @@
 
 		to {
 			background-size: 100% var(--size);
+		}
+	}
+
+	@keyframes jump {
+		from {
+			transform: translateY(0);
+		}
+
+		to {
+			transform: translateY(-50%);
+		}
+	}
+
+	@keyframes score {
+		from,
+		to {
+			transform: translateX(0) scale(1);
+		}
+
+		50% {
+			transform: translateX(-200%) scale(1.2);
 		}
 	}
 }
