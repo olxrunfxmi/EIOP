@@ -507,10 +507,24 @@
 			cursor: auto;
 
 			&::after {
-				content: url("https://ik.imagekit.io/ndtwmeq4p/eiop/helper.svg?updatedAt=1750691630686");
+				content: "";
 				position: absolute;
-				bottom: -20px;
+				bottom: -15px;
 				left: 24px;
+				background: var(--black-overlay);
+				width: 39px;
+				height: 16px;
+				mask-image: url(#mask);
+			}
+
+			&[data-color="white"] {
+				background: var(--white-off-white);
+				color: var(--black-overlay);
+
+				&::after {
+					background: var(--white-off-white);
+					mask-image: url(#altmask);
+				}
 			}
 
 			.list-span {
