@@ -776,6 +776,11 @@
 		position: relative;
 		overflow: hidden;
 
+		.text-group[data-type="xbig"] {
+			mask-image: linear-gradient(to right, black 90%, transparent),
+				linear-gradient(to right, transparent 10%, black 80%, transparent);
+		}
+
 		.end {
 			align-items: end;
 			margin-block-start: 200px;
@@ -809,7 +814,7 @@
 			background: var(--grey-light);
 			border-radius: var(--radius-s);
 			overflow: hidden;
-			border: 2px solid var(--grey-light);
+			/* border: 2px solid var(--grey-light); */
 		}
 
 		p {
@@ -859,6 +864,7 @@
 		place-content: center;
 		font-family: Tanker;
 		position: absolute;
+		text-decoration: none;
 		opacity: 1;
 		transform: scale(1);
 		transition: opacity 0.6s, transform 0.4s, display 0.4s;
@@ -937,7 +943,7 @@
 		}
 
 		&[data-type="xbig"] {
-			max-width: 640px;
+			max-width: 720px;
 		}
 	}
 

@@ -60,7 +60,7 @@ boxHandlerButtonEl.addEventListener("click", () => {
 	boxInteractiveEl.appendChild(divEl);
 
 	if (boxInteractiveEl.querySelectorAll(".columnbar").length === 1) {
-		const clearBtnEl = generateElement("button", "Clear", [
+		const clearBtnEl = generateElement("button", "Clear", undefined, [
 			"btn",
 			"clr-btn",
 			"clear",
@@ -75,22 +75,46 @@ boxHandlerButtonEl.addEventListener("click", () => {
 bubbleButtonEl.addEventListener("click", () => {
 	if (traditionEl.querySelectorAll(".circle").length === 0) {
 		const classArr = ["circle"];
-		const sEl = generateElement("div", "Divisibility Calculator", classArr, {
-			name: "type",
-			value: "s",
-		});
-		const mEl = generateElement("div", "EIOP", classArr, {
-			name: "type",
-			value: "m",
-		});
-		const lEl = generateElement("div", "Odin Project", classArr, {
-			name: "type",
-			value: "l",
-		});
-		const xlEl = generateElement("div", "Recreations", classArr, {
-			name: "type",
-			value: "xl",
-		});
+		const sEl = generateElement(
+			"a",
+			"Divisibility Calculator",
+			"https://olxrunfxmi.github.io/divisibility-calculator",
+			classArr,
+			{
+				name: "type",
+				value: "s",
+			}
+		);
+		const mEl = generateElement(
+			"a",
+			"EIOP",
+			"https://olxrunfxmi.github.io/EIOP",
+			classArr,
+			{
+				name: "type",
+				value: "m",
+			}
+		);
+		const lEl = generateElement(
+			"a",
+			"Odin Project",
+			"https://olxrunfxmi.github.io/Etch-A-Sketch",
+			classArr,
+			{
+				name: "type",
+				value: "l",
+			}
+		);
+		const xlEl = generateElement(
+			"a",
+			"Recreations",
+			"https://olxrunfxmi.github.io/recreations",
+			classArr,
+			{
+				name: "type",
+				value: "xl",
+			}
+		);
 		traditionEl.append(sEl, mEl, lEl, xlEl);
 	} else {
 		const circleEls = traditionEl.querySelectorAll(".circle");
@@ -121,7 +145,7 @@ gameBarEl.addEventListener("mouseover", (e) => {
 	}
 });
 
-function generateElement(element, textContent, classArr, dataObj) {
+function generateElement(element, textContent, href, classArr, dataObj) {
 	const el = document.createElement(element);
 	el.textContent = textContent;
 	if (classArr) {
@@ -129,6 +153,10 @@ function generateElement(element, textContent, classArr, dataObj) {
 	}
 	if (dataObj) {
 		el.dataset[dataObj.name] = [dataObj.value];
+	}
+
+	if (href) {
+		el.href = href;
 	}
 	return el;
 }
