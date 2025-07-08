@@ -128,7 +128,6 @@ gameBarEl.addEventListener("mouseover", (e) => {
 	if (e.target.closest(".block-item-alternate")) {
 		const projectEl = e.target.closest(".block-item-alternate");
 		const projectData = projectDetails[projectEl.dataset.info];
-		console.log(projectData);
 
 		const headingEl = contentDisEl.querySelector(".link-block > h5");
 		headingEl.textContent = projectData.name;

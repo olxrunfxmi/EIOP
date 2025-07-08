@@ -684,6 +684,8 @@
 		}
 
 		#life {
+			margin-block-start: 120px;
+
 			.end {
 				display: flex;
 				gap: var(--spacing-m);
