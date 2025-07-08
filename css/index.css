@@ -302,6 +302,17 @@
 		height: auto;
 	}
 
+	.link {
+		text-decoration: none;
+		color: var(--accent-orange);
+	}
+
+	.img-cover {
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
 	.link-decorate {
 		--size: 0.05em;
 		text-decoration: none;
@@ -797,6 +808,8 @@
 			height: 205px;
 			background: var(--grey-light);
 			border-radius: var(--radius-s);
+			overflow: hidden;
+			border: 2px solid var(--grey-light);
 		}
 
 		p {
