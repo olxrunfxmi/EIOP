@@ -776,10 +776,10 @@
 		position: relative;
 		overflow: hidden;
 
-		.text-group[data-type="xbig"] {
+		/* .text-group[data-type="xbig"] {
 			mask-image: linear-gradient(to right, black 90%, transparent),
 				linear-gradient(to right, transparent 10%, black 80%, transparent);
-		}
+		} */
 
 		.end {
 			align-items: end;
@@ -943,7 +943,7 @@
 		}
 
 		&[data-type="xbig"] {
-			max-width: 720px;
+			max-width: 640px;
 		}
 	}
 
