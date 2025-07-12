@@ -4,8 +4,8 @@ const bubbleButtonEl = document.querySelector("#bubbleHandler");
 const traditionEl = document.querySelector("#tradition");
 const gameBarEl = document.querySelector(".game-bar");
 const contentDisEl = gameBarEl.nextElementSibling;
-const buttonsHolderEl = document.querySelector(".button-group");
-const contentsEl = document.querySelector(".contents");
+const flipContainerEl = document.querySelector(".blob-interactive#flip");
+const windowContainerEl = flipContainerEl.querySelector(".window-container");
 
 const projectDetails = {
 	maxlength: {
@@ -161,40 +161,43 @@ function generateElement(element, textContent, href, classArr, dataObj) {
 	}
 	return el;
 }
-
-window.addEventListener("load", () => {
-	setHeight(contentsEl, 0);
-});
-
-buttonsHolderEl.addEventListener("click", (e) => {
-	const currentButtonEl = e.target.closest("button");
-	const allButtonEls = buttonsHolderEl.querySelectorAll("button");
-
-	if (currentButtonEl) {
-		setTransform(contentsEl, currentButtonEl);
-		allButtonEls.forEach((buttonEl) => (buttonEl.dataset.state = "inactive"));
-		currentButtonEl.dataset.state = "active";
+// const windowEl = windowContainerEl.querySelector(".window");
+flipContainerEl.addEventListener("click", (e) => {
+	if (e.target.closest(".window-container") !== windowContainerEl) {
+		flip(windowContainerEl, () => {
+			windowContainerEl.dataset.state = "close";
+		});
 	}
-
-	setHeight(contentsEl, currentButtonEl.dataset.num);
 });
 
-window.addEventListener("resize", () => {
-	const currentButtonEl = buttonsHolderEl.querySelector(
-		'button[data-state="active"]'
-	);
-	setTransform(contentsEl, currentButtonEl);
-	setHeight(contentsEl, currentButtonEl.dataset.num);
+windowContainerEl.addEventListener("click", () => {
+	flip(windowContainerEl, () => {
+		windowContainerEl.dataset.state = "open";
+	});
 });
 
-function setTransform(contents, currentButton) {
-	const transformValue =
-		contents.getBoundingClientRect().width * Number(currentButton.dataset.num);
-	contents.style.setProperty("--x", transformValue);
-}
+function flip(element, func) {
+	const firstLayout = element.getBoundingClientRect();
 
-function setHeight(contents, num) {
-	const currentContentEl = contents.querySelector(`[data-num='${num}']`);
-	const height = currentContentEl.getBoundingClientRect().height;
-	contents.style.setProperty("--height", height);
+	requestAnimationFrame(() => {
+		func();
+
+		const secondLayout = element.getBoundingClientRect();
+
+		const widthDiff = firstLayout.width / secondLayout.width;
+		const heightDiff = firstLayout.height / secondLayout.height;
+		const xDiff = firstLayout.left - secondLayout.left;
+		const yDiff = firstLayout.right - secondLayout.right;
+
+		element.style.setProperty("--diffW", widthDiff);
+		element.style.setProperty("--diffH", heightDiff);
+		element.style.setProperty("--diffX", xDiff);
+		element.style.setProperty("--diffY", yDiff);
+
+		element.dataset.flip = "invert";
+
+		requestAnimationFrame(() => {
+			element.dataset.flip = "play";
+		});
+	});
 }

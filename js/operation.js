@@ -2,6 +2,10 @@ const windowData = [document.body.scrollHeight, window.innerHeight];
 const scrollIdEl = document.querySelector("#scrollId");
 const blocks = document.querySelectorAll(".blocks > .block");
 
+
+const buttonsHolderEl = document.querySelector(".button-group");
+const contentsEl = document.querySelector(".contents");
+
 window.addEventListener("scroll", () => {
 	const scrollPercent = obtainScrollValue();
 	morphBlocks(blocks, Math.ceil(scrollPercent / 10));
@@ -35,4 +39,41 @@ function morphBlocks(blockHolder, num) {
 			block.style.background = backgroundColor;
 		}
 	});
+}
+
+window.addEventListener("load", () => {
+	setHeight(contentsEl, 0);
+});
+
+buttonsHolderEl.addEventListener("click", (e) => {
+	const currentButtonEl = e.target.closest("button");
+	const allButtonEls = buttonsHolderEl.querySelectorAll("button");
+
+	if (currentButtonEl) {
+		setTransform(contentsEl, currentButtonEl);
+		allButtonEls.forEach((buttonEl) => (buttonEl.dataset.state = "inactive"));
+		currentButtonEl.dataset.state = "active";
+	}
+
+	setHeight(contentsEl, currentButtonEl.dataset.num);
+});
+
+window.addEventListener("resize", () => {
+	const currentButtonEl = buttonsHolderEl.querySelector(
+		'button[data-state="active"]'
+	);
+	setTransform(contentsEl, currentButtonEl);
+	setHeight(contentsEl, currentButtonEl.dataset.num);
+});
+
+function setTransform(contents, currentButton) {
+	const transformValue =
+		contents.getBoundingClientRect().width * Number(currentButton.dataset.num);
+	contents.style.setProperty("--x", transformValue);
+}
+
+function setHeight(contents, num) {
+	const currentContentEl = contents.querySelector(`[data-num='${num}']`);
+	const height = currentContentEl.getBoundingClientRect().height;
+	contents.style.setProperty("--height", height);
 }
