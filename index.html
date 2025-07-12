@@ -326,53 +326,218 @@
     </section>
 
     <section id="present">
-        <p class="text-group pad">Armed with some rudimentary CSS, it was time to know some CSS Animations and more CSS
-            properties - logical
-            properties,
-            variables, etc. Took some lessons, dabbled and played with element building in Codepen.</p>
+        <div class="pad constraint">
+            <p class="text-group">Armed with some rudimentary CSS, it was time to know some CSS Animations and more CSS
+                properties - logical
+                properties,
+                variables, etc. Took some lessons, dabbled and played with element building in Codepen.</p>
+
+        </div>
         <header class="bar">
             <p>Bringing it together</p>
 
             <div class="button-group">
-                <button data-state="active"></button>
-                <button></button>
-                <button></button>
+                <button data-state="active" data-num="0"></button>
+                <button data-num="1"></button>
+                <button data-num="2"></button>
             </div>
 
             <h2>Some Presentable Codepen</h2>
         </header>
-        <div class="contents">
-            <div class="content">
-                Noun Header
-                <p>Using FLIP technique, I was able to transform the logo from the bottom to the top of the page which
-                    happens on click. I
-                    need to learn scroll animations to make it happen on scroll. It’s probably easy to do, but one step
-                    at a time. Using it,
-                    I first built a Rock, Paper, Scissors to showcase simple DOM manipulation and a bit of CSS learnings
-                    and Etch-a-Sketch
-                    with more DOM manipulation. And to cap it up, we built the typical calculator to complete the Odin
-                    Foundation course.</p>
-                <p>Using FLIP technique, I was able to transform the logo from the bottom to the top of the page which
-                    happens on click. I
-                    need to learn scroll animations to make it happen on scroll. It’s probably easy to do, but one step
-                    at a time. Using it,
-                    I first built a Rock, Paper, Scissors to showcase simple DOM manipulation and a bit of CSS learnings
-                    and Etch-a-Sketch
-                    with more DOM manipulation. And to cap it up, we built the typical calculator to complete the Odin
-                    Foundation course.</p>
-                <p>
-                    Using FLIP technique, I was able to transform the logo from the bottom to the top of the page which
-                    happens on click. I
-                    need to learn scroll animations to make it happen on scroll. It’s probably easy to do, but one step
-                    at a time. Using it,
-                    I first built a Rock, Paper, Scissors to showcase simple DOM manipulation and a bit of CSS learnings
-                    and Etch-a-Sketch
-                    with more DOM manipulation. And to cap it up, we built the typical calculator to complete the Odin
-                    Foundation course.
+        <div class="contents constraint" style="--x:0">
+            <div class="content" data-num="0">
+                <p class="codepen" data-height="720" data-default-tab="html,result" data-slug-hash="MYYGBmp"
+                    data-pen-title="recreating noun header (no-scroll)" data-user="olxrunfxmi"
+                    style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/olxrunfxmi/pen/MYYGBmp">
+                            recreating noun header (no-scroll)</a> by olxrunfxmi (<a
+                            href="https://codepen.io/olxrunfxmi">@olxrunfxmi</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
                 </p>
+                <script async src="https://public.codepenassets.com/embed/index.js" defer></script>
+                <div class="text-group" data-type="small">
+                    <h3>Noun Header</h3>
+                    <p>Using <span class=" highlighter">
+                            FLIP Technique
+                            <span class="highlight-wrap">
+                                <span class="highlight">
+                                    <span>
+                                        The FLIP animation technique, an acronym for First, Last, Invert, Play, is a
+                                        strategy for animating layout changes by
+                                        leveraging transform properties
+                                    </span>
+                                </span>
+                            </span>
+                        </span> , I was able to transform the logo from the bottom to the top of the page which
+                        happens on click. I
+                        need to learn scroll animations to make it happen on scroll. It’s probably easy to do, but
+                        one step
+                        at a time.</p>
+                </div>
+                <aside class="bar">
+                    <h4>Some explainer</h4>
+                    <div class="text-group">
+                        <p>The FLIP technique is a high-performance animation approach that leverages the browser's
+                            compositor thread for smooth
+                            transitions. In this example, when the header is clicked, the code toggles the <span
+                                class="code">data-state</span>
+                            attribute to change the
+                            logo's position and size. Before the change, the logo's initial position and dimensions are
+                            recorded. After the change,
+                            the new state is measured. The FLIP method then calculates the required transformation to
+                            invert the logo back to its
+                            original appearance (using CSS transforms) even though it now resides in its new position in
+                            the layout. This inversion
+                            step is crucial because it visually reverts the element without causing a layout shift,
+                            setting the stage for the
+                            animation.</p>
+                        <p>Once the inversion is applied (by setting <span class="code">data-flip='invert'</span>), the
+                            logo is transformed to
+                            mimic its starting state.
+                            The CSS uses custom properties (<span class="code">--dx</span>, <span
+                                class="code">--dy</span>, etc.) to apply a transform that translates
+                            and scales the logo so it
+                            appears unchanged. Then, in the next animation frame, the <span
+                                class="code">data-flip</span> state is switched to
+                            <span class="code">play</span>, which removes the
+                            inversion transform and triggers a CSS transition. The transition smoothly animates the logo
+                            from the inverted state
+                            (which looks like the starting state) to its actual state (the final position and size).
+                            This two-step process (invert
+                            then play) creates the illusion of the element animating from the first state to the last,
+                            but with the performance
+                            benefits of using transforms and opacity.
+                        </p>
+                        <p>
+                            The FLIP principles: measure first and last states, invert using
+                            transforms, then play with a
+                            transition. My (wacky) example demonstrates how to separate measurement (JavaScript) from
+                            styling
+                            (CSS). What I have learnt is to apply FLIP in my
+                            projects, I have to abstract the pattern: capture initial state, apply layout change,
+                            capture final
+                            state, compute deltas, apply
+                            inverted transform, then transition to the natural state. Remember to use
+                            <span class="code">requestAnimationFrame</span> for timing to avoid
+                            layout thrashing. FLIP is especially useful for complex layout animations because it
+                            minimizes reflows and leverages GPU
+                            acceleration, making animations smoother even on lower-end devices. I intend to practice by
+                            applying
+                            FLIP to more and different scenarios,
+                            such as list reordering or expanding/collapsing elements.
+                        </p>
+                    </div>
+                </aside>
+
+                <div class="showcase">
+                    <h4>Another example with FLIP technique at play.</h4>
+                    <div class="blob-interactive" data-type="big">
+                    </div>
+                </div>
             </div>
-            <div class="content"></div>
-            <div class="content"></div>
+            <div class="content" data-num="1">
+                <p class="codepen" data-height="720" data-default-tab="result" data-slug-hash="gbbBgjK"
+                    data-pen-title="telegram ui" data-user="olxrunfxmi"
+                    style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/olxrunfxmi/pen/gbbBgjK">
+                            telegram ui</a> by olxrunfxmi (<a href="https://codepen.io/olxrunfxmi">@olxrunfxmi</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://public.codepenassets.com/embed/index.js" defer></script>
+                <div class="text-group" data-type="small">
+                    <h3>Telegram iPad OS</h3>
+                    <p>To practise newly found CSS skills, I recreated within Codepen an interface I use quite a lot -
+                        Telegram. It's geniunely one of the best design apps in the world. Making use of some newly
+                        baseline available CSS features and one of my favourite CSS pseudos - <span
+                            class="code">::before</span> and <span class="code">::after</span> </p>
+                </div>
+                <aside class="bar">
+                    <h4>Some explainer</h4>
+                    <div class="text-group">
+                        <p>Overall, there are many things happening in this Codepen. But we will focus on a few things.
+                            The search functionality is implemented with a container that has an <span
+                                class="code">::before</span> pseudo-element for the search icon. The
+                            icon starts centered and moves to the left via <span class="code">transform:
+                                translateX(20%)</span> when the
+                            input is focused or has content (using <span class="code">:focus-within</span> and <span
+                                class="code">:has</span>). The scrollbars are customized using
+                            <span class="code">::-webkit-scrollbar</span> selectors. They are hidden by default and
+                            appear on hover with a thin
+                            design (4-6px width). The
+                            track and thumb colors are set to blend with the dark theme, using CSS variables like
+                            <span class="code">--black</span> and <span class="code">--accent-black</span> for
+                            the scrollbar track and thumb.
+                        </p>
+                        <p>The battery indicator dynamically adjusts its width based on the <span
+                                class="code">--percent</span> variable. The
+                            active tab underline is
+                            animated using CSS variables (<span class="code">--start</span> and <span
+                                class="code">--width</span>`) for position and width, updated via
+                            JavaScript.
+                            Message bubbles feature speech tails created with <span class="code">clip-path</span> and
+                            pseudo-elements, with
+                            styling controlled by data
+                            attributes (e.g., <span class="code">data-user="user"</span> for current user messages). The
+                            design is responsive:
+                            the chat list hides on
+                            screens ≤770px, and message bubbles expand to full width on screens ≤475px. The mobile
+                            drawer appears in the message
+                            window on smaller screens, replacing the "Edit" text.
+                        </p>
+                    </div>
+                </aside>
+
+                <!-- <div class="showcase">
+                    <h4>Another example with FLIP technique at play.</h4>
+                    <div class="blob-interactive" data-type="big">
+                    </div>
+                </div> -->
+            </div>
+            <div class="content" data-num="2">
+                <p class="codepen" data-height="720" data-default-tab="css,result" data-slug-hash="gbOQJjQ"
+                    data-pen-title="coding a carousel" data-user="olxrunfxmi"
+                    style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/olxrunfxmi/pen/gbOQJjQ">
+                            coding a carousel</a> by olxrunfxmi (<a
+                            href="https://codepen.io/olxrunfxmi">@olxrunfxmi</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://public.codepenassets.com/embed/index.js" defer></script>
+                <div class="text-group" data-type="small">
+                    <h3>Coding a Carousel</h3>
+                    <p>It's the simple things that matter. Using JavaScript and CSS, I built a simple carousel with
+                        handles and indicators like God intended.</p>
+                </div>
+                <aside class="bar">
+                    <h4>Some explainer</h4>
+                    <div class="text-group">
+                        <p>This code creates a functional image carousel with smooth transitions between slides. The
+                            carousel displays three images
+                            horizontally, with navigation controlled by arrow buttons on either side and indicator dots
+                            below. The slides move using
+                            CSS transforms that shift the container left or right, while JavaScript handles the logic to
+                            track the current position
+                            and update the active dot indicator. The transitions animate smoothly over 0.4 seconds for a
+                            polished user experience.</p>
+                        <p>The navigation works through three methods: arrow buttons that cycle forward and backward
+                            through slides, clickable dots
+                            that jump directly to specific slides, and automatic wrapping when reaching either end. The
+                            current slide position is
+                            stored in a data attribute that triggers corresponding CSS transforms, while JavaScript
+                            synchronizes the active dot
+                            state. Event delegation efficiently handles dot clicks through a single listener on the
+                            parent container rather than
+                            individual handlers.
+                        </p>
+                    </div>
+                </aside>
+
+                <div class="showcase">
+                    <h4>Another example of a carousel.</h4>
+                    <div class="blob-interactive" data-type="big">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -467,7 +632,7 @@
                         <span class="text">Recreations</span>
                     </p>
                 </a>
-                <a class="project-frame" href="https://olxrunfxmi.github.io/recreations/window/index.html">
+                <a class="project-frame" href="https://olxrunfxmi.github.io/recreations/windows/index.html">
                     <div class="box">
                         <img class="img-cover"
                             src="https://ik.imagekit.io/ndtwmeq4p/eiop/windows.png?updatedAt=1751897493226"

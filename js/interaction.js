@@ -4,6 +4,8 @@ const bubbleButtonEl = document.querySelector("#bubbleHandler");
 const traditionEl = document.querySelector("#tradition");
 const gameBarEl = document.querySelector(".game-bar");
 const contentDisEl = gameBarEl.nextElementSibling;
+const buttonsHolderEl = document.querySelector(".button-group");
+const contentsEl = document.querySelector(".contents");
 
 const projectDetails = {
 	maxlength: {
@@ -158,4 +160,41 @@ function generateElement(element, textContent, href, classArr, dataObj) {
 		el.href = href;
 	}
 	return el;
+}
+
+window.addEventListener("load", () => {
+	setHeight(contentsEl, 0);
+});
+
+buttonsHolderEl.addEventListener("click", (e) => {
+	const currentButtonEl = e.target.closest("button");
+	const allButtonEls = buttonsHolderEl.querySelectorAll("button");
+
+	if (currentButtonEl) {
+		setTransform(contentsEl, currentButtonEl);
+		allButtonEls.forEach((buttonEl) => (buttonEl.dataset.state = "inactive"));
+		currentButtonEl.dataset.state = "active";
+	}
+
+	setHeight(contentsEl, currentButtonEl.dataset.num);
+});
+
+window.addEventListener("resize", () => {
+	const currentButtonEl = buttonsHolderEl.querySelector(
+		'button[data-state="active"]'
+	);
+	setTransform(contentsEl, currentButtonEl);
+	setHeight(contentsEl, currentButtonEl.dataset.num);
+});
+
+function setTransform(contents, currentButton) {
+	const transformValue =
+		contents.getBoundingClientRect().width * Number(currentButton.dataset.num);
+	contents.style.setProperty("--x", transformValue);
+}
+
+function setHeight(contents, num) {
+	const currentContentEl = contents.querySelector(`[data-num='${num}']`);
+	const height = currentContentEl.getBoundingClientRect().height;
+	contents.style.setProperty("--height", height);
 }
